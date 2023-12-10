@@ -31,10 +31,16 @@ const deleteBook = async (id: string): Promise<IBooks | null> => {
   return result
 }
 
+const totalBooks = async () => {
+  const result = await Books.countDocuments()
+  return result
+}
+
 export const BooksService = {
   createBook,
   getBooks,
   getBook,
   updateBook,
   deleteBook,
+  totalBooks,
 }

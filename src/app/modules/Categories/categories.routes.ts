@@ -11,6 +11,7 @@ router.post(
   validateRequest(CategoriesValidation.createCategoriesZodSchema),
   CategoriesController.createCategory,
 )
+router.get('/total-categories', CategoriesController.totalCategories)
 router.get('/:id', CategoriesController.getCategory)
 router.patch(
   '/:id',

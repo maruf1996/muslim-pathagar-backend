@@ -31,10 +31,16 @@ const deleteCategory = async (id: string): Promise<ICategories | null> => {
   return result
 }
 
+const totalCategories = async () => {
+  const result = await Categories.countDocuments()
+  return result
+}
+
 export const CategoriesService = {
   createCategory,
   getCategories,
   getCategory,
   updateCategory,
   deleteCategory,
+  totalCategories,
 }

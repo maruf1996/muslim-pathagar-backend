@@ -11,6 +11,7 @@ router.post(
   validateRequest(BooksValidation.createBooksZodSchema),
   BooksController.createBook,
 )
+router.get('/total-books', BooksController.totalBooks)
 router.get('/:id', BooksController.getBook)
 router.patch(
   '/:id',

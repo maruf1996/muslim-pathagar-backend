@@ -88,10 +88,28 @@ const deleteCategory = async (
   }
 }
 
+const totalCategories = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const result = await CategoriesService.totalCategories()
+    res.status(200).json({
+      status: 'success',
+      message: 'Category Retrive is Successfully',
+      data: result,
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+
 export const CategoriesController = {
   createCategory,
   getCategories,
   getCategory,
   updateCategory,
   deleteCategory,
+  totalCategories,
 }
