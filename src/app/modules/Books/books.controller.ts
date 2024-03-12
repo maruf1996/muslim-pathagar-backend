@@ -77,7 +77,7 @@ const totalBooks = async (req: Request, res: Response, next: NextFunction) => {
     const result = await BooksService.totalBooks()
     res.status(200).json({
       status: 'success',
-      message: 'Books Retrive is Successfully',
+      message: 'Books Count is Successfully',
       data: result,
     })
   } catch (error) {

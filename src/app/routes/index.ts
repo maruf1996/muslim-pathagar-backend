@@ -2,6 +2,7 @@
 import express from 'express'
 import { BooksRoutes } from '../modules/Books/books.route'
 import { CategoriesRoutes } from '../modules/Categories/categories.routes'
+import { DownloadRoutes } from '../modules/Download/download.route'
 import { SubCategoriesRoutes } from '../modules/SubCategories/subCategories.route'
 
 const router = express.Router()
@@ -18,6 +19,10 @@ const moduleRoutes: any[] = [
   {
     path: '/books',
     route: BooksRoutes,
+  },
+  {
+    path: '/download',
+    route: DownloadRoutes,
   },
 ]
 
